@@ -318,6 +318,4 @@ pyrightconfig.json
 .streamlit/secrets.toml
 
 # Folders
-data/
-extracted_information/
-imagenes/
+
