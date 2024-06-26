@@ -4,9 +4,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-#OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-
-
 def load_html_template(): 
     with open('core/utils/html_template.html', 'r') as file:
         html_template = file.read()

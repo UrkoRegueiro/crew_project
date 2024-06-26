@@ -1,6 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from core.tools.agent_tools import ScraperTool
+from core.tools.agent_tools import InformationTool
 from langchain_groq import ChatGroq
 from datetime import datetime
 import os
@@ -20,54 +20,37 @@ class NewspaperCrew:
         return llm
 
     @agent
-    def scraper(self) -> Agent:
+    def journalist(self) -> Agent:
         return Agent(
-            config=self.agents_config["scraper"],
-            tools=[ScraperTool()],
+            config=self.agents_config["journalist"],
+            tools=[InformationTool()],
             verbose=True,
             allow_delegation=False,
             llm=self.llm(),
         )
 
     @agent
-    def researcher(self) -> Agent:
+    def editor(self) -> Agent:
         return Agent(
-            config=self.agents_config["researcher"],
+            config=self.agents_config["editor"],
             verbose=True,
             allow_delegation=False,
             llm=self.llm(),
-        )
-
-    @agent
-    def designer(self) -> Agent:
-        return Agent(
-            config=self.agents_config["designer"],
-            verbose=True,
-            allow_delegation=False,
-            llm=self.llm(),
-        )
-
-    @task
-    def scrape_task(self) -> Task:
-        return Task(
-            config=self.tasks_config["scrape_task"],
-            agent=self.scraper(),
-            output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_scrape_task.md",
         )
         
     @task
-    def research_task(self) -> Task:
+    def journalist_task(self) -> Task:
         return Task(
-            config=self.tasks_config["research_task"],
-            agent=self.researcher(),
+            config=self.tasks_config["journalist_task"],
+            agent=self.journalist(),
             output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_research_task.md",
         )
 
     @task
-    def newspaper_task(self) -> Task:
+    def editor_task(self) -> Task:
         return Task(
-            config=self.tasks_config["newspaper_task"],
-            agent=self.designer(),
+            config=self.tasks_config["editor_task"],
+            agent=self.editor(),
             output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_newspaper_task_task.html",
         )
 

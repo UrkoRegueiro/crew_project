@@ -1,69 +1,39 @@
-scrape_task:
+journalist_task:
   description: >
-    Gather video information from a youtube.
-    With this gathering, compile a list of the videos that you found.
-    USE JUST ONCE THE TOOL PROVIDED, IT DOESN'T NEED AN INPUT, DON'T USE ANY.
-
-    Follow these rules:
-    - It MUST be written in SPANISH.
-    - Include the title of the videos.
-    - Include the author of the videos.
-    - Include the date of the videos.
-    - Include the text from the transcription of the videos.
-    - Include the URL of the videos.
-
-  expected_output: >
-    A markdown document in SPANISH with the most recent uploaded videos. Each new video should contain the following:
-    - Title of the video
-    - Author of the video
-    - Date of the video
-    - Text from the transcription of the video
-    - URL of the video
-
-    Here is an example of the format of a new video that you could include in the document:
+    Obtain information from youtube videos to write articles of a newspaper.
+    With this information, compile a list of the videos that you found.
+    USE JUST ONCE THE TOOL PROVIDED, IT DOESN'T NEED AN INPUT.
     
-    <EXAMPLE>
-      Video 1:
-      - Title: **El auténtico endeudamiento público de España: 600% del PIB**
-      - Author: Juan Ramón Rallo
-      - Date: 24 de Junio del 2024
-      - Text: Cuáles serían Los Auténticos niveles de deuda Pública del Estado español si incluyeramos en esta cifra el dinero que el estado a deuda en pensiones a los futuros pensionistas veámoslo se suele decir que la deuda Pública del Estado español se ubica alrededor del 110 por del pib de hecho ya algo por debajo sin embargo esta cifra únicamente cuantifica el dinero que adeuda el estado español por los bonos en sentido amplio del término letras bonos y obligaciones del estado que el estado ha emitido en los mercados y que los inversores han adquirido pero en esta cifra de endeudamiento público no aparecen otros pasivos con los que también carga el estado español por ejemplo la deuda con proveedores del Estado español no aparece reflejada en esta cifra ahora bien como en general la deuda que las administraciones públicas tienen con los proveedores no es un monto extraordinariamente elevado puede ser el un el 2 el 3% del pib Lo cierto es que esta omisión no distorsiona demasiado la imagen final de la deuda Pública conjunta del Estado español ahora bien existe otra omisión que desde luego si lo hace[... more text ...]
-      - URL:  https://www.youtube.com/watch?v=Qs6BdBHiLwM&ab_channel=JuanRam%C3%B3nRallo
-    </EXAMPLE>
-
-research_task:
-  description: >
-    Given the list of videos conduct a summary of the text in SPANISH that will be used to write news articles in the newspaper.
-    
-    Do the following things:
+    Do the following things with the information obtained:
     - You MUST write in SPANISH.
-    - Summarize the text of the transcription. Make the summary as long as necessary to include all the relevant information for a newspaper.
     - Rewrite the title of the video to make it more engaging and interesting for the readers of the newspaper.
+    - Rewrite the text of the video to make it more engaging and interesting for the readers of the newspaper(if needed).
     - Include the author of the video.
-    - Include the date of the video.
+    - Include the date of the video in this format "Day of Month of Year".
     - Include the URL of the video.
 
   expected_output: >
-    A markdown document with all the news articles written from videos information to be included in the newspaper of the week. The document should have a list of news articles.
+    A markdown document in SPANISH with the complete information obtained about the videos.
     
     Each one should contain:
     - Title:
     - Date:
-    - Summary: 
+    - Text: 
     - Source: [URL of the video]
 
     Here is an example of a document that you are expected to produce:
     <EXAMPLE>
     
       - **Title:** La deuda pública española es mucho más alta de lo que se cree
-        **Summary:** La deuda pública española es mucho más alta de lo que se cree. Si se incluyera la cantidad de dinero que se debe a los futuros pensionistas, la cifra actual de alrededor del 110% del PIB se multiplicaría por cinco. Según Eurostat, el valor presente de los gastos futuros en pensiones comprometidos por el Estado español asciende a un alarmante 500% del PIB, lo que lo convierte en el país europeo con mayor deuda implícita en materia de pensiones. Esta deuda implícita puede llevar a una visión distorsionada de la situación económica real del país. Aunque no se refleja en las estadísticas oficiales de deuda pública, es un pasivo importante que el Estado español tendrá que enfrentar en el futuro. Sin embargo, es importante tener en cuenta que el Estado puede recortar las pensiones en el futuro para hacer frente a esta deuda implícita. Es probable que en las próximas décadas se produzcan recortes en las pensiones futuras que hoy el estado se ha comprometido a pagar. Esto significa que muchas personas que contaban con recibir un determinado nivel de ingresos a través del sistema público de pensiones van a ver defraudadas sus expectativas. Por lo tanto, es prudente anticipar la posibilidad de que nuestras pensiones futuras vayan a ser recortadas y planificar financieramente nuestro futuro de manera adecuada. Para ilustrar la magnitud del problema, si consideramos que el Estado tendría que destinar la recaudación equivalente a 14 años de ingresos públicos para hacer frente a todos los pasivos del Estado, es evidente que la deuda pública en forma de derechos pensionales es un tema que requiere atención urgente. Una forma de preparar nuestro futuro es ahorrando periódicamente a través de una plataforma como Trade Republic, que nos permite invertir en índices bursátiles globales con rentabilidades históricas de alrededor del 6 o 7% al año. De esta manera, podemos complementar nuestras pensiones públicas con una pensión privada y asegurar un futuro financiero más seguro.
+        **Date:** 25 de Julio de 2024
+        **Text:** La deuda pública española es mucho más alta de lo que se cree. Si se incluyera la cantidad de dinero que se debe a los futuros pensionistas, la cifra actual de alrededor del 110% del PIB se multiplicaría por cinco. Según Eurostat, el valor presente de los gastos futuros en pensiones comprometidos por el Estado español asciende a un alarmante 500% del PIB, lo que lo convierte en el país europeo con mayor deuda implícita en materia de pensiones. Esta deuda implícita puede llevar a una visión distorsionada de la situación económica real del país. Aunque no se refleja en las estadísticas oficiales de deuda pública, es un pasivo importante que el Estado español tendrá que enfrentar en el futuro. Sin embargo, es importante tener en cuenta que el Estado puede recortar las pensiones en el futuro para hacer frente a esta deuda implícita. Es probable que en las próximas décadas se produzcan recortes en las pensiones futuras que hoy el estado se ha comprometido a pagar. Esto significa que muchas personas que contaban con recibir un determinado nivel de ingresos a través del sistema público de pensiones van a ver defraudadas sus expectativas. Por lo tanto, es prudente anticipar la posibilidad de que nuestras pensiones futuras vayan a ser recortadas y planificar financieramente nuestro futuro de manera adecuada. Para ilustrar la magnitud del problema, si consideramos que el Estado tendría que destinar la recaudación equivalente a 14 años de ingresos públicos para hacer frente a todos los pasivos del Estado, es evidente que la deuda pública en forma de derechos pensionales es un tema que requiere atención urgente. Una forma de preparar nuestro futuro es ahorrando periódicamente a través de una plataforma como Trade Republic, que nos permite invertir en índices bursátiles globales con rentabilidades históricas de alrededor del 6 o 7% al año. De esta manera, podemos complementar nuestras pensiones públicas con una pensión privada y asegurar un futuro financiero más seguro.
         **Source:** ["Title of the video"](https://www.youtube.com/watch?v=Qs6BdBHiLwM&ab_channel=JuanRam%C3%B3nRallo) por "Author"
 
         [... more news articles ...]
 
     </EXAMPLE>
 
-newspaper_task:
+editor_task:
   description: >
     Fill the following HTML template with exactly the same information that is given to you.
     
