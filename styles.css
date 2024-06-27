@@ -1,4 +1,5 @@
 /* Base styles */
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -7,20 +8,50 @@ body {
     color: #333;
 }
 
+.content-wrapper {
+    position: relative; /* Asegura que el pseudo-elemento se posicione correctamente */
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo desenfocado */
+    background-color: transparent; /* Fondo transparente */
+    padding: 20px; /* Ajusta el espacio interior según sea necesario */
+}
+
+.content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('core/utils/images/fondo_2.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
 /* Container */
 .container {
-    width: 80%;
+    width: 60%;
+    margin: auto;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.9);;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.main_container {
+    width: 50%;
     margin: auto;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: transparent;
+    color: #555;
     padding: 20px 0;
     text-align: center;
 }
@@ -28,14 +59,14 @@ header {
 header h1 {
     margin: 0;
     font-size: 36px;
-    color: #fff; /* Asegura que el texto sea blanco */
+    color: #B6C409;
 }
 
 header h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
-    color: #fff; /* Asegura que el texto sea blanco */
+    color: #fff;
 }
 
 /* Main content styles */
@@ -45,12 +76,13 @@ header h2 {
 }
 
 .news-item {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .news-title {
     font-size: 24px;
     margin: 0 0 10px;
+    text-align: center;
 }
 
 .news-text {
@@ -64,12 +96,12 @@ header h2 {
     font-size: 14px;
     color: #999;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los elementos a la derecha */
 }
 
 .news-meta .date {
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .news-meta .source a {
@@ -84,12 +116,12 @@ header h2 {
 /* Footer styles */
 footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px 0;
+    margin-top: 50px;
+    padding: 50px 0;
     background-color: #f0f0f0;
 }
 
 footer .goodbye {
-    color: #666;
+    color: #fff;
     font-size: 16px;
 }

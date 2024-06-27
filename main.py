@@ -5,7 +5,7 @@ load_dotenv()
 
 
 def load_html_template(): 
-    with open('core/utils/template.html', 'r') as file:
+    with open('core/utils/templates/template.html', 'r') as file:
         html_template = file.read()
         
     return html_template
