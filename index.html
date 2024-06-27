@@ -2,110 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>El Libertario - PeriÃ³dico Semanal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        h2 {
-            margin: 0;
-        }
-        p {
-            color: #666;
-            line-height: 1.5;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 20px;
-        }
-        .read-more {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .read-more a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .read-more a:hover {
-            text-decoration: underline;
-        }
-        .date {
-            text-align: right;
-            color: #666;
-        }
-        .goodbye {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-        }
-    </style>
+    <title>El Libertario - Periódico Semanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>El Libertario - PeriÃ³dico Semanal</h1>
-        <ul>
-            <li>
-                <h2>PP y PSOE pactan repartirse el órgano de gobierno de los jueces</h2>
-                <p>Tras más de 5 años de bloqueo, el PSOE y el PP han llegado a un acuerdo para renovar el órgano de gobierno de los jueces, garantizando la independencia y despolitización de la justicia. Sin embargo, la trampa está en que ambos partidos se repartirán los vocales del Consejo General del Poder Judicial de forma partidista, a pesar de haber prometido anteriormente despolitizar dicho órgano. El acuerdo también incluye reformar la Ley Orgánica del Poder Judicial para despolitizar la justicia y que las decisiones se tomen por mayoría cualificada de 35 vocales. Aunque la primera parte del acuerdo parece plausible, la verdadera prueba será la tramitación de la reforma de la ley, que se llevará a cabo en el mismo pleno en el que se votará la elección de los vocales. Existe la preocupación de que el PSOE y el PP, al tener el control de la mayoría de los vocales en el Consejo General del Poder Judicial, puedan bloquear cualquier propuesta de reforma que busque despolitizar la elección de los vocales, lo que podría comprometer la verdadera independencia del órgano de gobierno de los jueces.</p>
-                <div class="date">
-                    <p>26 de Junio de 2024</p>
-                </div>
-                <div class="source">
-                    <p>Fuente:</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=lKQqPiWNO9s&ab_channel=JuanRam%C3%B3nRallo">PP y PSOE pactan repartirse el órgano de gobierno de los jueces</a> por "Juan Ramón Rallo"
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <h2>El PIB de Argentina cae un 5,1%</h2>
-                <p>El Producto Interno Bruto (PIB) de Argentina cayó un 5,1% en el primer trimestre del año 2024, reflejando el fracaso de la política económica de Javier Miley. Sin embargo, esta caída era esperable debido al plan de estabilización macroeconómica para restablecer la solvencia del Estado argentino. A pesar de la falta de medidas para incentivar la inversión, se espera una mejora en los próximos trimestres. Indicadores adelantados sugieren una leve recuperación en el segundo trimestre. Aunque la caída del PIB es preocupante, no es atípica en la historia reciente de la economía argentina, considerando el ajuste fiscal implementado por el gobierno de Javier Miley. Existe preocupación por la brecha cambiaria y el aumento del riesgo país, ya que si no se controlan, el plan de ajuste y saneamiento macroeconómico podría fracasar. Es crucial resolver estos desequilibrios para que Argentina pueda salir de la crisis sin hiperinflación o default. Muchos críticos de Miley utilizan la caída del PIB como un argumento político sin considerar el contexto económico más amplio.</p>
-                <div class="date">
-                    <p>25 de Junio de 2024</p>
-                </div>
-                <div class="source">
-                    <p>Fuente:</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=TJ80p5AAKPM&ab_channel=JuanRam%C3%B3nRallo">El PIB de Argentina cae un 5,1%</a> por "Juan Ramón Rallo"
-                    </ul>
+    <header>
+        <div class="container">
+            <h1>El Libertario</h1>
+            <h2>Periódico Semanal</h2>
+        </div>
+    </header>
+    <main class="container">
+        <ul class="news-list">
+            <li class="news-item">
+                <h3 class="news-title">PP y PSOE pactan repartirse el órgano de gobierno de los jueces</h3>
+                <p class="news-text">El PSOE y el PP han llegado a un acuerdo para renovar el órgano de gobierno de los jueces, aparentemente garantizando la independencia y despolitización de la justicia. Sin embargo, se revela que la verdadera intención de ambos partidos es mantener el control político sobre el Consejo General del Poder Judicial, repartiéndose los vocales entre ellos. Desde la reforma de la Ley Orgánica del Poder Judicial en 1985, el órgano ha estado politizado y ninguno de los partidos ha tomado medidas para revertir esta situación. Ambos partidos buscan una justicia dócil y controlada, en lugar de una verdaderamente independiente.</p>
+                <div class="news-meta">
+                    <span class="date">26 de Junio de 2024</span>
+                    <span class="source">Fuente: <a href="https://www.youtube.com/watch?v=lKQqPiWNO9s&ab_channel=JuanRam%C3%B3nRallo">PP y PSOE pactan repartirse el órgano de gobierno de los jueces</a> por "Juan Ramón Rallo"</span>
                 </div>
             </li>
-            <li>
-                <h2>El auténtico endeudamiento público de España: 600% del PIB</h2>
-                <p>La deuda pública del Estado español no solo incluye el dinero adeudado por bonos emitidos en los mercados, sino también la deuda con proveedores y, especialmente, la deuda futura en pensiones. Esta última representa el 500% del PIB, cinco veces más que la deuda pública emitida en bonos. España es el país europeo con mayor deuda implícita en pensiones, superando a Alemania. A pesar de esto, los inversores suelen preocuparse más por la deuda emitida en bonos, que representa solo una parte de la deuda total del Estado. Los inversores muestran más inquietud por la deuda pública emitida en bonos, que representa solo el 100-110% del PIB, en comparación con la deuda pensional implícita del Estado, que asciende a más del 500% del PIB. Esto se debe a que los estados están más acostumbrados a impagar la deuda implícita en pensiones sin consecuencias, mientras que el impago de la deuda en bonos tendría graves repercusiones, como la exclusión de los mercados financieros. Se prevén recortes en las pensiones futuras, lo que llevará a muchas personas a recibir ingresos menores de los prometidos por el Estado. Es prudente anticipar la posibilidad de recortes en las pensiones futuras y considerar complementar la pensión pública con una pensión privada derivada del ahorro acumulado a lo largo de la vida profesional. Además, se sugiere la opción de realizar un plan de ahorro periódico e invertir en índices bursátiles globales para preparar la jubilación ante posibles recortes en las pensiones públicas. La deuda total del Estado, incluyendo bonos emitidos y deuda futura en pensiones, asciende al 6% del PIB, lo que representa un desafío para hacer frente a todos los pasivos del Estado. Es crucial ahorrar para evitar que la montaña de deuda pensional futura se convierta en una carga insostenible.</p>
-                <div class="date">
-                    <p>24 de Junio de 2024</p>
+            <li class="news-item">
+                <h3 class="news-title">La economía argentina se desploma: PIB cae un 5,1%</h3>
+                <p class="news-text">El Producto Interno Bruto (PIB) de Argentina cayó un 5,1% en el primer trimestre del año 2024, reflejando el fracaso de la política económica de Javier Miley. Sin embargo, esta caída era esperable debido al plan de estabilización macroeconómica en curso. A pesar de la falta de medidas para incentivar la inversión, se espera una mejora en los próximos trimestres. Indicadores adelantados sugieren una leve recuperación en el segundo trimestre. Aunque la caída del PIB es significativa, no es atípica considerando el ajuste fiscal implementado. Es crucial controlar desequilibrios como la brecha cambiaria y el riesgo país para evitar el fracaso del plan de ajuste.</p>
+                <div class="news-meta">
+                    <span class="date">25 de Junio de 2024</span>
+                    <span class="source">Fuente: <a href="https://www.youtube.com/watch?v=TJ80p5AAKPM&ab_channel=JuanRam%C3%B3nRallo">El PIB de Argentina cae un 5,1%</a> por "Juan Ramón Rallo"</span>
                 </div>
-                <div class="source">
-                    <p>Fuente:</p>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=Qs6BdBHiLwM&ab_channel=JuanRam%C3%B3nRallo">El auténtico endeudamiento público de España: 600% del PIB</a> por "Juan Ramón Rallo"
-                    </ul>
+            </li>
+            <li class="news-item">
+                <h3 class="news-title">La deuda pública española es mucho más alta de lo que se cree</h3>
+                <p class="news-text">La deuda pública del Estado español no solo se limita al dinero adeudado por bonos emitidos en los mercados, sino que también incluye la deuda con proveedores y, especialmente, la deuda futura en pensiones. Según Eurostat, el valor presente del gasto futuro en pensiones comprometido por el Estado español equivale al 500% del PIB, cinco veces más que toda la deuda pública emitida en bonos. Esto sitúa a España como el país europeo con mayores deudas implícitas en pensiones. A pesar de que esta cifra no se refleja en las estadísticas oficiales, es un pasivo importante que debería ser considerado al evaluar la situación financiera del país. La deuda implícita en pensiones es preocupante ya que los estados están más acostumbrados a impagarla sin consecuencias, a diferencia de la deuda en bonos que conlleva repercusiones graves en caso de impago. Es previsible que en las próximas décadas se produzcan recortes en las pensiones futuras, lo que obligará a muchos a complementar sus ingresos con pensiones privadas. La importancia de ahorrar e invertir para complementar las pensiones públicas se vuelve crucial, y una opción recomendada es el ahorro periódico e inversión en índices bursátiles globales a través de plataformas como Trade Republic. Con el panorama actual, es necesario considerar que la deuda pública en forma de derechos pensionales sí debe ser pagada, y los ingresos públicos no serán suficientes para hacer frente a esta montaña de pasivos estatales. Por lo tanto, es fundamental ahorrar para evitar ser aplastados por la deuda pensional futura.</p>
+                <div class="news-meta">
+                    <span class="date">24 de Junio de 2024</span>
+                    <span class="source">Fuente: <a href="https://www.youtube.com/watch?v=Qs6BdBHiLwM&ab_channel=JuanRam%C3%B3nRallo">El auténtico endeudamiento público de España: 600% del PIB</a> por "Juan Ramón Rallo"</span>
                 </div>
             </li>
         </ul>
-        <p class="goodbye">Goodbye and see you next week!</p>
-    </div>
+    </main>
+    <footer class="container">
+        <p class="goodbye">¡Adiós y nos vemos la próxima semana!</p>
+    </footer>
 </body>
 </html>
