@@ -61,16 +61,16 @@ def transcriptor(url: str):
 
 def info_videos(dias=3):
     '''
-    Función que devuelve los videos de los últimos 5 días
+    Función que devuelve información de los videos de los últimos 3 días
 
     Input:
-        - xxxx: str -->
+        - dias: int --> Número de días
 
     Output:
-        - results: object --> JSON con la información obtenida(titulo, fecha y url)
+        - results: object --> JSON con la información obtenida(titulo, autor, fecha, url, resumen)
     '''
 
-    # Fecha de hace 5 días
+    # Fecha de hace 3 días
     today = datetime(datetime.now().year, datetime.now().month, datetime.now().day, tzinfo=timezone.utc)
     two_days_ago = today - timedelta(days=dias)
     date_format = two_days_ago.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'

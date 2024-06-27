@@ -43,7 +43,7 @@ class NewspaperCrew:
         return Task(
             config=self.tasks_config["journalist_task"],
             agent=self.journalist(),
-            output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_research_task.md",
+            output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_journalist_task.md",
         )
 
     @task
@@ -51,7 +51,7 @@ class NewspaperCrew:
         return Task(
             config=self.tasks_config["editor_task"],
             agent=self.editor(),
-            output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_newspaper_task_task.html",
+            output_file="index.html",
         )
 
     @crew
