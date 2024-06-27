@@ -28,12 +28,14 @@ header {
 header h1 {
     margin: 0;
     font-size: 36px;
+    color: #fff; /* Asegura que el texto sea blanco */
 }
 
 header h2 {
     margin: 0;
     font-size: 24px;
     font-weight: 400;
+    color: #fff; /* Asegura que el texto sea blanco */
 }
 
 /* Main content styles */
