@@ -31,7 +31,7 @@ body {
 
 /* Container */
 .container {
-    width: 60%;
+    width: 70%;
     margin: auto;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.9);;
@@ -40,7 +40,7 @@ body {
 }
 
 .main_container {
-    width: 50%;
+    width: 65%;
     margin: auto;
     padding: 20px;
     margin-bottom: 20px;
