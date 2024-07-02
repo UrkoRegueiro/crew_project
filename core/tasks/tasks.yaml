@@ -46,4 +46,10 @@ editor_task:
     {html_template}
   expected_output: >
     Return ONLY the contents of the HTML template, without any tripple quotes like '```', '```html' or any other text. 
-    This output will be saved as a HTML file and sent to the subscribers.
+    This output will be sent to the Newspaper Email Sender and saved as a HTML file.
+
+sender_task:
+  description: >
+    Use the final output given by the Newspaper Compiler to send emails to the newspaper suscribers.
+  expected_output: >
+    Return a markdown document informing the emails were sent correctly.

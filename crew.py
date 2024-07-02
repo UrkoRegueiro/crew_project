@@ -1,6 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from core.tools.agent_tools import InformationTool
+from core.tools.agent_tools import InformationTool, SenderTool
 from langchain_groq import ChatGroq
 from datetime import datetime
 import os
@@ -37,6 +37,16 @@ class NewspaperCrew:
             allow_delegation=False,
             llm=self.llm(),
         )
+
+    @agent
+    def sender(self) -> Agent:
+        return Agent(
+            config=self.agents_config["sender"],
+            tools=[SenderTool()],
+            verbose=True,
+            allow_delegation=False,
+            llm=self.llm(),
+        )
         
     @task
     def journalist_task(self) -> Task:
@@ -52,6 +62,14 @@ class NewspaperCrew:
             config=self.tasks_config["editor_task"],
             agent=self.editor(),
             output_file="index.html",
+        )
+
+    @task
+    def sender_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["sender_task"],
+            agent=self.sender(),
+            output_file=f"logs/{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_sender_task.md",
         )
 
     @crew

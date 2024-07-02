@@ -1,6 +1,6 @@
 from crewai_tools import BaseTool
 from typing import Union, Tuple, Dict
-from core.tools.functions import info_videos
+from core.tools.functions import info_videos, send_email
 
 
 class InformationTool(BaseTool):
@@ -14,6 +14,13 @@ class InformationTool(BaseTool):
         results = info_videos()
         return results
 
+class SenderTool(BaseTool):
+    name: str = "Sender tool"
+    description: str = ("This tool is used to send an email to all of the newspaper suscribers. The input variable 'text' is the final answer provided by the Newspaper Editor.")
+
+    def _run(self, text: str):
+        send_email(text)
+        return "Emails sent."
 
 
 

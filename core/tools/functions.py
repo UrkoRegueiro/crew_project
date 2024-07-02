@@ -5,6 +5,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
 from datetime import datetime, timedelta, timezone
+from email.message import EmailMessage
+import smtplib
 import os
 
 llm_summary = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", openai_api_key=os.getenv('OPENAI_API_KEY'))
@@ -106,4 +108,36 @@ def info_videos(dias=3):
                                   })
     
     return results
+
+
+
+def send_email(text):
+    sender = "regueiro.u@gmail.com"
+    suscriptores = ["regueiro.urko@gmail.com"]
+
+    recipient = suscriptores[0]
+
+    email = EmailMessage()
+    email["From"] = sender
+    email["To"] = recipient
+    email["Subject"] = "Noticias semanales."
+    email.set_content(text, subtype="html")
+
+    #TLS is used:
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+
+    server.login(sender, os.getenv("EMAIL_PASS"))
+    server.sendmail(sender, recipient, email.as_string())
+    server.quit()
+
+    return "Email sent"
+
+
+def load_html_template(): 
+    with open('core/utils/templates/template.html', 'r') as file:
+        html_template = file.read()
+        
+    return html_template
+
 
