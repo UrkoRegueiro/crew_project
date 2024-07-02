@@ -7,4 +7,4 @@ langchain_groq
 google-api-python-client
 crewai
 crewai[tools]
-embedchain
+embedchain==0.1.109
