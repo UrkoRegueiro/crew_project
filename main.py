@@ -1,5 +1,4 @@
 from crew import NewspaperCrew
-import os
 from core.tools.functions import load_html_template
 from dotenv import load_dotenv
 load_dotenv()

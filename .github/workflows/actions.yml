@@ -1,0 +1,35 @@
+name: Run main.py every 4 days
+
+on:
+  schedule:
+    - cron: "0 0 */4 * *"  # This cron expression means every 4 days at midnight
+  workflow_dispatch:
+
+jobs:
+  run-main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Run main.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        run: |
+          source venv/bin/activate
+          python main.py
