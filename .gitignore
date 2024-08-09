@@ -318,4 +318,8 @@ pyrightconfig.json
 .streamlit/secrets.toml
 
 # Folders
+logs/
+
+# Files
+lab-crew-project.ipynb
 
