@@ -2,6 +2,7 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from core.tools.agent_tools import InformationTool, SenderTool
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from datetime import datetime
 import os
 
@@ -13,9 +14,14 @@ class NewspaperCrew:
     agents_config = "core/agents/agents.yaml"
     tasks_config = "core/tasks/tasks.yaml"
 
+    #def llm(self):
+        #llm = ChatGroq(model="llama3-70b-8192",
+               #groq_api_key= os.getenv('GROQ_API_KEY'))
+
+        #return llm
+
     def llm(self):
-        llm = ChatGroq(model="llama3-70b-8192",
-               groq_api_key= os.getenv('GROQ_API_KEY'))
+        llm = ChatOpenAI(temperature=0, model="gpt-4o-mini", openai_api_key=os.getenv('OPENAI_API_KEY'))
 
         return llm
 

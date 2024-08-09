@@ -9,7 +9,7 @@ from email.message import EmailMessage
 import smtplib
 import os
 
-llm_summary = ChatOpenAI(temperature=0, model="gpt-3.5-turbo", openai_api_key=os.getenv('OPENAI_API_KEY'))
+llm_summary = ChatOpenAI(temperature=0, model="gpt-4o-mini", openai_api_key=os.getenv('OPENAI_API_KEY'))
 
 
 prompt_template = """Write an article in SPANISH for a newspaper summarizing the following:
@@ -139,5 +139,3 @@ def load_html_template():
         html_template = file.read()
         
     return html_template
-
-
