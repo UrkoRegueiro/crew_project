@@ -1,8 +1,8 @@
 name: Run main.py every 4 days
 
 on:
-  schedule:
-    - cron: "0 0 */4 * *"  # This cron expression means every 4 days at midnight
+  #schedule:
+    #- cron: "0 0 */4 * *"  # This cron expression means every 4 days at midnight
   workflow_dispatch:
 
 jobs:
